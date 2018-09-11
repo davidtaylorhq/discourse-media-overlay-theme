@@ -1,5 +1,6 @@
 {
   "name": "Media Overlay",
   "about_url": "https://github.com/davidtaylorhq/discourse-media-overlay-theme",
-  "license_url": "https://github.com/davidtaylorhq/discourse-media-overlay-theme/blob/master/LICENSE"
+  "license_url": "https://github.com/davidtaylorhq/discourse-media-overlay-theme/blob/master/LICENSE",
+  "component": true
 }
