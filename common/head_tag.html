@@ -97,9 +97,11 @@
     //////////////////////////////////////////////////////////////////////////////
     // Initialise stuff
     //////////////////////////////////////////////////////////////////////////////
+    const { iconHTML } = require("discourse-common/lib/icon-library");
+
     function addOverlays($elem) {
       $('iframe, video, .lazyYT', $elem).wrap("<div class='media-overlay-eligable'></div>")
-                .before("<button class='btn no-text control' onclick='window.mediaOverlayService.loadNew(this)'><i class='fa fa-expand' aria-hidden='true'></i></button>")
+                .before("<button class='btn no-text control' onclick='window.mediaOverlayService.loadNew(this)'>" + iconHTML('expand') + "</button>")
                 .wrap("<div class='content'></div>");
     }
     
@@ -117,20 +119,20 @@
         <div class="media-buttons">
           {{#d-button action="switchSides" class="media-switch"}}
               {{#if dockLeft}}
-                {{fa-icon 'caret-right'}}
+                {{d-icon 'caret-right'}}
               {{else}}
-                {{fa-icon 'caret-left'}}
+                {{d-icon 'caret-left'}}
               {{/if}}
           {{/d-button}}
           {{#d-button action="toggle" class="media-toggle"}}
               {{#if collapsed}}
-                {{fa-icon 'caret-up'}}
+                {{d-icon 'caret-up'}}
               {{else}}
-                {{fa-icon 'caret-down'}}
+                {{d-icon 'caret-down'}}
               {{/if}}
           {{/d-button}}
           {{#d-button action="close" class="media-close"}}
-              {{fa-icon 'close'}}
+              {{d-icon 'close'}}
           {{/d-button}}
         </div>
       </div>
