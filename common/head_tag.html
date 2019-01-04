@@ -17,7 +17,9 @@
     //////////////////////////////////////////////////////////////////////////////
     // Define Translations
     //////////////////////////////////////////////////////////////////////////////
-    I18n.translations.en.js.media_overlay = { title: "Media Player" };
+    if(!themePrefix){
+      I18n.translations.en.js.media_popup_title = "Media Player";
+    }
 
     
     //////////////////////////////////////////////////////////////////////////////
@@ -114,7 +116,7 @@
     <div id="media-overlay" class="{{if collapsed 'collapsed'}} {{additionalClasses}}">
       <div id="title" {{action "toggle"}}>
         <div class="media-title">
-          {{i18n "media_overlay.title"}}
+          {{i18n (concat theme-prefix "media_popup_title")}}
         </div>
         <div class="media-buttons">
           {{#d-button action="switchSides" class="media-switch"}}
