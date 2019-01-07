@@ -101,7 +101,7 @@
 
     function addOverlays($elem) {
       $('iframe, video, .lazyYT', $elem).wrap("<div class='media-overlay-eligable'></div>")
-                .before("<button class='btn no-text control'>" + iconHTML('expand') + "</button>")
+                .before("<button class='btn no-text control'>" + iconHTML('discourse-expand') + "</button>")
                 .wrap("<div class='content'></div>");
 
       $( "button.control", $elem ).click(function() {
