@@ -17,12 +17,6 @@ export default Component.extend({
     this._super(...arguments);
   },
 
-  didRender: function () {
-    scheduleOnce("afterRender", this, function () {
-      this.$(".lazyYT").lazyYT();
-    });
-  },
-
   actions: {
     toggle: function () {
       this.toggleProperty("collapsed");
