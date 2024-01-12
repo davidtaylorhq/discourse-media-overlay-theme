@@ -1,12 +1,13 @@
 import Component from "@ember/component";
 import { inject } from "@ember/service";
 import { scheduleOnce } from "@ember/runloop";
+import { observer } from "@ember/object";
 
 export default Component.extend({
   service: inject("media-overlay-service"),
   collapsed: false,
   dockLeft: false,
-  valueObserver: Ember.observer(
+  valueObserver: observer(
     "service.content",
     function (sender, key, value, rev) {
       this.set("collapsed", false);
