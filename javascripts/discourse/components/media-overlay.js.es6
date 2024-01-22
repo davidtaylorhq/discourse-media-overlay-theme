@@ -1,7 +1,7 @@
 import Component from "@ember/component";
 import { inject } from "@ember/service";
 import { scheduleOnce } from "@ember/runloop";
-import { observer } from "@ember/object";
+import { observer, computed } from "@ember/object";
 
 export default Component.extend({
   service: inject("media-overlay-service"),
@@ -30,11 +30,12 @@ export default Component.extend({
     },
   },
 
-  additionalClasses: function () {
+  @computed("dockLeft")
+  get additionalClasses(){
     if (this.get("dockLeft")) {
       return "dock-left";
     } else {
       return "dock-right";
     }
-  }.property("dockLeft"),
+  },
 });
